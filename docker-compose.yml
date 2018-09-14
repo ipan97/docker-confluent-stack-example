@@ -71,4 +71,9 @@ services:
       CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
       CONNECT_REST_ADVERTISED_HOST_NAME: "localhost"
       CONNECT_PLUGIN_PATH: "/usr/share/java"
+     depends_on:
+      - confluent-zookeeper
+      - confluent-kafka
+      - confluent-schema-registry
+      - confluent-rest-proxy
     network_mode: "host"
